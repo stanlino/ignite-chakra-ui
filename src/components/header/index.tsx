@@ -1,6 +1,12 @@
-import { Flex, Grid, Image } from "@chakra-ui/react";
+import { Flex, Grid, IconButton, Image } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+
+import { IoChevronBack } from 'react-icons/io5'
 
 export function Header() {
+
+  const { asPath, back } = useRouter()
+
   return (
     <Flex
       bg='white'
@@ -23,6 +29,16 @@ export function Header() {
         1fr)'
         justifyContent='center'
       >
+        {asPath !== '/' && (
+          <IconButton 
+            aria-label="Retornar para a página anterior" 
+            as={IoChevronBack} 
+            size={'sm'}
+            bg='transparent'
+            onClick={back}
+          />
+        )}
+        
         <Image
           w={['80px', '185px']}
           src='/logo.svg'
