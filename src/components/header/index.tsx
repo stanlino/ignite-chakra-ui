@@ -14,8 +14,7 @@ export function Header() {
       as='header'
       mx='auto'
       px='1rem'
-      h={['50',
-      '100px']}
+      h={['50', '100px']}
       align='center'
       justify='center'
     >
@@ -25,15 +24,14 @@ export function Header() {
         w='100%'
         maxW='1160px'
         alignItems='center'
-        templateColumns='repeat(3,
-        1fr)'
+        templateColumns='repeat(3, 1fr)'
         justifyContent='center'
       >
         {asPath !== '/' && (
           <IconButton 
             aria-label="Retornar para a página anterior" 
             as={IoChevronBack} 
-            size={'sm'}
+            size='xs'
             bg='transparent'
             onClick={back}
           />
